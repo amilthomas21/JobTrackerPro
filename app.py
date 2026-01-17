@@ -15,37 +15,23 @@ def home():
     """
     Homepage - Welcome screen
     """
-    return """
-    <html>
-        <head>
-            <title>JobTrackerPro</title>
-            <style>
-                body {
-                    font-family: times new roman, sans-serif;
-                    text-align: center;
-                    padding: 50px;
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    color: white;
-                }
-                h1 { font-size: 48px; margin-bottom: 20px; }
-                p { font-size: 24px; }
-            </style>
-        </head>
-        <body>
-            <h1>🚀 Welcome to JobTrackerPro</h1>
-            <p>Your AI-powered job search companion</p>
-            <p>Built by Amil Thomas</p>
-        </body>
-    </html>
-    """
+    # These are temporary placeholder values
+    # We'll replace them with real database data later
+    stats = {
+        'total_jobs': 1250,
+        'new_jobs': 47,
+        'applications': 0,
+        'interviews': 0
+    }
+    return render_template('home.html', **stats)
 
 # Jobs listing page
 @app.route('/jobs')
 def jobs():
     """
-    Jobs listing page - will show all jobs
+    Jobs listing page - will show all jobs from database
     """
-    return "<h1>Jobs Page - Coming Soon!</h1>"
+    return render_template('jobs.html')
 
 # Dashboard page
 @app.route('/dashboard')
@@ -53,9 +39,8 @@ def dashboard():
     """
     Dashboard - statistics and insights
     """
-    return "<h1>Dashboard - Coming Soon!</h1>"
+    return render_template('dashboard.html')
 
 # Run the application
 if __name__ == '__main__':
-    # debug=True shows detailed errors (helpful for learning!)
     app.run(debug=True, port=5000)

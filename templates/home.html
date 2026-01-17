@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Home - JobTrackerPro{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+    <h1 class="display-3 mb-4">
+        <i class="fas fa-rocket" style="color: #667eea;"></i>
+        Welcome to JobTrackerPro
+    </h1>
+    <p class="lead mb-4">Your AI-powered job search companion for finding tech jobs in Europe</p>
+    
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-search fa-3x mb-3" style="color: #667eea;"></i>
+                    <h5 class="card-title">Smart Job Search</h5>
+                    <p class="card-text">Filter and find jobs matching your skills and preferences</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-chart-line fa-3x mb-3" style="color: #764ba2;"></i>
+                    <h5 class="card-title">Track Progress</h5>
+                    <p class="card-text">Monitor your applications and interview progress</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-bell fa-3x mb-3" style="color: #667eea;"></i>
+                    <h5 class="card-title">Get Alerts</h5>
+                    <p class="card-text">Receive notifications for new matching opportunities</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-5">
+        <a href="/jobs" class="btn btn-primary btn-lg px-5">
+            <i class="fas fa-list"></i> Browse Jobs
+        </a>
+    </div>
+</div>
+
+<div class="mt-5 p-4 bg-light rounded">
+    <h4 class="mb-3">📊 Quick Stats</h4>
+    <div class="row text-center">
+        <div class="col-md-3">
+            <h2 style="color: #667eea;">{{ total_jobs }}</h2>
+            <p>Total Jobs</p>
+        </div>
+        <div class="col-md-3">
+            <h2 style="color: #764ba2;">{{ new_jobs }}</h2>
+            <p>New This Week</p>
+        </div>
+        <div class="col-md-3">
+            <h2 style="color: #667eea;">{{ applications }}</h2>
+            <p>Applications</p>
+        </div>
+        <div class="col-md-3">
+            <h2 style="color: #764ba2;">{{ interviews }}</h2>
+            <p>Interviews</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
